@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 
-public interface MusicRepository extends MongoRepository<Song, String> {
+public interface SongRepository extends MongoRepository<Song, String> {
 
     @Query(value="{}")
     public List<Song> allSongs();

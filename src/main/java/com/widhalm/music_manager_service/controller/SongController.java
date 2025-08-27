@@ -1,7 +1,7 @@
 package com.widhalm.music_manager_service.controller;
 
 import com.widhalm.music_manager_service.model.Song;
-import com.widhalm.music_manager_service.repository.MusicRepository;
+import com.widhalm.music_manager_service.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +17,13 @@ import java.util.List;
 public class SongController {
 
     @Autowired
-    MusicRepository musicRepository;
+    SongRepository songRepository;
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/songs")
     public ResponseEntity<List<Song>> getAllSongs() {
-        List<Song> songs = musicRepository.allSongs();
-        System.out.println("Count:  " + musicRepository.count());
+        List<Song> songs = songRepository.allSongs();
+        System.out.println("Count:  " + songRepository.count());
         System.out.println("   Songs......");
         System.out.println(songs);
         return new ResponseEntity<>(songs, HttpStatus.OK);
