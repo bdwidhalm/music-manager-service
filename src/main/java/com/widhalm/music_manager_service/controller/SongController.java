@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/music")
-public class MusicController {
+public class SongController {
 
     @Autowired
     MusicRepository musicRepository;
