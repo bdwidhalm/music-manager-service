@@ -24,8 +24,6 @@ public class SongController {
     public ResponseEntity<List<Song>> getAllSongs() {
         List<Song> songs = songRepository.allSongs();
         System.out.println("Count:  " + songRepository.count());
-        System.out.println("   Songs......");
-        System.out.println(songs);
         return new ResponseEntity<>(songs, HttpStatus.OK);
     }
 }
